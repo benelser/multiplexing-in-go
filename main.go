@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 	"strings"
-	"time
+	"time"
 )
 
 func main() {
@@ -30,11 +30,11 @@ func main() {
 		case me := <-personChannel:
 			fmt.Printf("From our person channel we received the following name: %v\n", me.Name)
 			return
-    // Syntax is receiving the data off of channel person into var me which is of type Person{}
+                // Syntax is receiving the data off of channel person into var me which is of type Person{}
 		case echoPerson := <-wireUpReceiver:
 			fmt.Printf("Echo case fired!!!!!. Name provided is: %s\n", echoPerson.Name)
 			continue
-    // Case to execute our scheduled job //// whatever it may be here we are daisy-chaining channels follow along in output
+                // Case to execute our scheduled job //// whatever it may be here we are daisy-chaining channels follow along in output
 		case <-timer.C:
 			fmt.Println("Our 5 second timer expired. Sending signal to our Sender channel (wireUpSender )")
 			wireUpSender <- &Person{Name: "Our echo dude"}
