@@ -30,7 +30,7 @@ func main() {
 		case me := <-personChannel:
 			fmt.Printf("From our person channel we received the following name: %v\n", me.Name)
 			return
-                // Syntax is receiving the data off of channel person into var me which is of type Person{}
+                // Syntax is receiving the data off of channel person into var echoPerson which is of type Person{}
 		case echoPerson := <-wireUpReceiver:
 			fmt.Printf("Echo case fired!!!!!. Name provided is: %s\n", echoPerson.Name)
 			continue
